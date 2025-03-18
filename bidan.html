@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Website Kebidanan" />
+    <meta property="og:description" content="Website edukasi tentang kebidanan." />
+    <meta property="og:image" content="URL_GAMBAR_ANDA" />
+    <meta property="og:type" content="website" />
+    <title>Website Kebidanan</title>
+</head>
+
+<style>
+    /* ... (CSS Anda) ... */
+      /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    /* Sections */
+    section {
+        padding: 2rem;
+        margin: 1rem auto;
+        max-width: 800px;
+    }
+
+    section h2 {
+        color: #4CAF50;
+        margin-bottom: 1rem;
+    }
+
+    /* Video Section */
+    .video-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .video-item {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .video-item iframe {
+        width: 100%;
+        height: 200px;
+        border: none;
+        border-radius: 8px;
+    }
+
+    .video-item p {
+        margin-top: 0.5rem;
+        font-weight: bold;
+    }
+
+    /* FAQ Section */
+    .faq-container {
+        margin-top: 1rem;
+    }
+
+    .faq-question {
+        width: 100%;
+        padding: 1rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        text-align: left;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .faq-question:hover {
+        background-color: #45a049;
+    }
+
+    .faq-answer {
+        padding: 1rem;
+        background-color: #e9f5e9;
+        border-left: 4px solid #4CAF50;
+        margin-bottom: 1rem;
+        display: none;
+    }
+
+    .faq-answer.active {
+        display: block;
+    }
+
+    /*soal*/
+    .container {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .esai {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .esai button {
+        margin-top: 1rem;
+    }
+
+    #jawaban {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+        resize: none;
+        /* Nonaktifkan resize handle */
+        overflow: hidden;
+        min-height: 40px;
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+
+    #jawaban::placeholder {
+        color: #999;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    #hasil {
+        margin-top: 20px;
+        font-size: 1.2em;
+    }
+
+    /* Contact Section */
+    #contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #contact-form label {
+        font-weight: bold;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    #contact-form button {
+        padding: 0.75rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    #contact-form button:hover {
+        background-color: #45a049;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+
+    footer p {
+        margin: 0;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Website Kebidanan</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#videos">Video</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Pengertian Kehamilan</h2>
+        <p> <span style="font-weight: bold; font-size: 1.5rem;">Kehamilan</span> adalah kondisi ketika sel telur yang
+            telah dibuahi oleh sperma berkembang di dalam rahim. Kehamilan
+            merupakan proses fisiologis yang dialami oleh wanita yang sudah pubertas.</p>
+        <div class="faq-container">
+            <h2>Pertanyaan Umum (FAQ)</h2>
+            <button class="faq-question">Ciri-ciri kehamilan</button>
+            <div class="faq-answer">
+                <ul>
+                    <li>Terjadi pembuahan dan perkembangan janin di dalam rahim
+                    <li>Masa kehamilan berlangsung selama 40 minggu atau lebih dari sembilan bulan
+                    <li>Waktu ini dihitung dari periode menstruasi yang terakhir
+                    <li>Kehamilan terbagi dalam tiga trimester
+                </ul>
+            </div>
+            <button class="faq-question">Pentingnya menjaga kesehatan ibu hamil</button>
+            <div class="faq-answer">
+                <li>Menjaga kesehatan dan status gizinya saat sebelum dan selama kehamilan
+                <li>Menjaga kesehatan dan status gizinya setelah melahirkan dan masa menyusui
+                <li>Mencegah masalah gizi pada ibu hamil
+            </div>
+        </div>
+        <button class="faq-question">Proses kehamilan</button>
+        <div class="faq-answer">
+            <li>Ovulasi
+            <li>Migrasi spermatozoa dan ovum
+            <li>Konsepsi dan pertumbuhan zigot
+            <li>Nidasi pada uterus
+            <li>Pembentukan plasenta
+            <li>Tumbuh kembang hasil konsepsi sampai aterm
+        </div>
+        <button class="faq-question">Hasil kehamilan</button>
+        <div class="faq-answer">
+            <ul>
+                <li>Kelahiran bayi dan plasenta melalui jalan lahir</li>
+            </ul>
+        </div>
+        </div>
+    </section>
+
+    <section id="videos">
+        <h2>Video Edukasi</h2>
+        <div class="video-container">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+                <p>Promosi Kesehatan Poltekkes Kemenkes Surabaya #SAYAPILIHSEHAT</p>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                <p>Video Profil Poltekkes Kemenkes Surabaya</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <h1>Apakah kehamilan merupakan proses fisiologis?</h1>
+            <form id="pilihan-ganda">
+                <label>
+                    <input type="radio" name="jawaban1" value="Ya" required> Ya
+                </label>
+                <label>
+                    <input type="radio" name="jawaban1" value="Tidak"> Tidak
+                </label>
+                <h1>Jenis makanan apa yang di perbolehkan oleh ibu hamil?</h1>
+                <label>
+                    <input type="radio" name="jawaban2" value="sushi" required> A. Shusi
+                </label>
+                <label>
+                    <input type="radio" name="jawaban2" value="salad sayur"> B. Salad Sayur
+                </label>
+                <label>
+                    <input type="radio" name="jawaban2" value="junk food"> C. Fast Food
+                </label>
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+        <div class="esai">
+            <h1>Sebutkan ciri-ciri kehamilan?</h1>
+            <form id="form-esai">
+                <textarea id="jawaban" placeholder="..." required></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+            <div id="hasil"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Kontak Kami</h2>
+        <form id="contact-form" action="proses_kontak.php" method="POST">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Bimatech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle FAQ Answers
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                // Toggle the active class on the clicked question
+                question.classList.toggle('active');
+
+                // Get the corresponding answer
+                const answer = question.nextElementSibling;
+
+                // Toggle the display of the answer
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                } else {
+                    answer.style.display = "block";
+                }
+            });
+        });
+
+        // Optional: Prevent form submission for demonstration purposes
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Form telah dikirim! Terima kasih.');
+        });
+    </script>
+
+    <script>
+        document.getElementById('pilihan-ganda').addEventListener('submit', function (event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+
+            let skor = 0;
+
+            // Cek jawaban pertama
+            const jawaban1 = document.querySelector('input[name="jawaban1"]:checked');
+            if (jawaban1 && jawaban1.value === "Ya") {
+                skor += 1; // Skor 1 untuk jawaban benar
+            }
+
+            // Cek jawaban kedua
+            const jawaban2 = document.querySelector('input[name="jawaban2"]:checked');
+            if (jawaban2 && jawaban2.value === "salad sayur") {
+                skor += 1; // Skor 1 untuk jawaban benar
+            }
+
+            // Tampilkan hasil
+            const hasilDiv = document.getElementById('hasil');
+            hasilDiv.innerHTML = `Skor Anda: ${skor} dari 2`;
+        });
+    </script>
+
+    <script>
+        document.getElementById('form-esai').addEventListener('submit', function (event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+
+            const jawaban = document.getElementById('jawaban').value.toLowerCase(); // Ambil jawaban dan ubah ke huruf kecil
+            const kataKunci = ["telat haid", "mual", "muntah", "payudara bengkak", "lelah", "sering buang air kecil", "Terjadi pembuahan dan perkembangan janin di dalam rahim", "Masa kehamilan berlangsung selama 40 minggu atau lebih dari sembilan bulan", "Waktu ini dihitung dari periode menstruasi yang terakhir", "Kehamilan terbagi dalam tiga trimester"]; // Kata kunci yang diharapkan
+            let skor = 0;
+
+            // Cek apakah jawaban mengandung kata kunci
+            kataKunci.forEach(kata => {
+                if (jawaban.includes(kata)) {
+                    skor += 1; // Tambahkan skor jika kata kunci ditemukan
+                }
+            });
+
+            // Tampilkan hasil
+            const hasilDiv = document.getElementById('hasil');
+            hasilDiv.innerHTML = `Skor Anda: ${skor} dari ${kataKunci.length}`;
+        });
+    </script>
+
+    <script>
+        //script non aktif tombol kontak
+        const contactForm = document.getElementById('contact-form');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+
+        // Fungsi untuk memeriksa apakah semua field telah diisi
+        function checkFormValidity() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Aktifkan tombol jika semua field terisi, nonaktifkan jika tidak
+            if (name !== "" && email !== "" && message !== "") {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+        // Tambahkan event listener untuk memeriksa form setiap kali ada perubahan
+        contactForm.addEventListener('input', checkFormValidity);
+
+        // Nonaktifkan tombol saat halaman pertama kali dimuat
+        checkFormValidity();
+    </script>
+</body>
+
+</html>

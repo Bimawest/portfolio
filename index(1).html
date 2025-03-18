@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Welcome to Coffee Shop, your go-to place for the best coffee in town. Explore our wide range of coffee blends and enjoy a unique coffee experience." />
+    <meta name="keywords"
+        content="coffee, coffee shop, latte, butterscotch, taro latte, pandan coffee, mango yakult, nuttela blend" />
+    <meta name="author" content="BimaTech" />
+    <title>Coffee Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style(1).css" />
+</head>
+
+<body>
+    <div id="loading-spinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="notif" class="notif">
+        <div class="notifdes">
+            <h3>Selamat Datang</h3>
+            <p>
+                Anda berada di website Coffe Shop silahkan anda memesan tanpa harus
+                mengantri. pesanan anda akan langsung terhubung ke perangkat WA kasir.
+                salam Kopi
+            </p>
+            <button id="confirm">OK</button>
+        </div>
+    </div>
+    <div id="backoff"></div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-container">
+                <img id="logo" alt="Logo Coffee Shop" src="img/logo.png" />
+                <span>Coffe Shop</span>
+            </div>
+            <nav class="nav">
+                <a href="reservasi.html" title="Home" id="reservasi">
+                    RESERVASI
+                </a>
+                <a href="keranjang.html" title="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-badge" class="cart-badge">0</span> <!-- Badge untuk jumlah item -->
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="slider-move" style="--width: 200px; --height: 200px; --quantity: 6;">
+            <span>BEST SELLEER</span>
+            <div class="list-move">
+                <div class="item-move" style="--position: 1">
+                    <img src="img/nasi_goreng.jpg" alt="" />
+                </div>
+                <div class="item-move" style="--position: 2">
+                    <img src="img/esspreso.jpg" alt="" />
+                </div>
+                <div class="item-move" style="--position: 3">
+                    <img src="img/picollo.jpg" alt="" />
+                </div>
+                <div class="item-move" style="--position: 4">
+                    <img src="img/dimsum.jpg" alt="" />
+                </div>
+                <div class="item-move" style="--position: 5">
+                    <img src="img/risol.jpg" alt="" />
+                </div>
+                <div class="item-move" style="--position: 6">
+                    <img src="img/tahu.jpg" alt="" />
+                </div>
+
+                <div class="item-move" style="--position: 1">
+                    <img src="img/sate.jpg" alt="" />
+                </div>
+                <div class="item-move" style="--position: 2">
+                    <img src="img/chicken_honey.jpg" alt="" />
+                </div>
+                <div class="item-move" style="--position: 3">
+                    <img src="img/taro.jpg" alt="" />
+                </div>
+                <div class="item-move" style="--position: 4">
+                    <img src="img/matah.jpg" alt="" />
+                </div>
+                <div class="item-move" style="--position: 5">
+                    <img src="img/orange_coffe.jpg" alt="" />
+                </div>
+                <div class="item-move" style="--position: 6">
+                    <img src="img/capuchino.jpg" alt="" />
+                </div>
+            </div>
+    </section>
+
+    <div class="halaman">
+        <h1>anda berada di halaman <h1
+                style="font-family: Fredericka the Great, serif; font-style: italic; font-weight: 400;">MINUMAN</h1>
+        </h1>
+        <p>pilih menu yang anda inginkan</p>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Product Grid -->
+        <section id="products" class="products">
+            <nav id="nav" class="flex justify-end gap-4">
+                <a href="index.html" title="Search" id="drink">
+                    <i class="fas fa-mug-hot"></i>
+                    <p>drink</p>
+                </a>
+                <a href="food.html" title="Shopping Cart" id="food">
+                    <i class="fas fa-utensils"></i>
+                    <p>food</p>
+                </a>
+            </nav>
+            <div class="menu">
+                <h1>Espresso Based</h1>
+                <div class="product-grid">
+                    <!-- Product Item -->
+                    <div class="product-item">
+                        <img alt="Espresso" src="img/esspreso.jpg" />
+                        <h3>Espresso</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/esspreso.jpg" data-name="esspreso">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/esspreso.jpg" alt="" />
+                        <h3>Espresso</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Picollo" src="img/picollo.jpg" />
+                        <h3>Picollo</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/picollo.jpg" data-name="Picollo">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/picollo.jpg" alt="" />
+                        <h3>Picollo</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Affogato" src="img/affogato.jpg" />
+                        <h3>Affogato</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/affogato.jpg" data-name="Affogato">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/affogato.jpg" alt="" />
+                        <h3>Affogato</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Americano" src="img/americano.jpg" />
+                        <h3>Americano</h3>
+                        <p></p>
+                        <p class="price">Rp15.500</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/americano.jpg" data-name="Americano">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/americano.jpg" alt="" />
+                        <h3>Americano</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Capuchino" src="img/capuchino.jpg" />
+                        <h3>Capuchino</h3>
+                        <p></p>
+                        <p class="price">Rp14.800</p>
+                        <button class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/capuchino.jpg" data-name="Capuchino">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/capuchino.jpg" alt="" />
+                        <h3>Capuchino</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Caffe Latte" src="img/caffe_latte.jpg" />
+                        <h3>Caffe Latte</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/caffe_latte.jpg" data-name="Caffe Latte">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/caffe_latte.jpg" alt="" />
+                        <h3>Caffe Latte</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--non coffee-->
+            <div class="menu">
+                <h1>Non Coffee</h1>
+                <div class="product-grid">
+                    <!-- Product Item -->
+                    <div class="product-item">
+                        <img alt="Taro" src="img/taro.jpg" />
+                        <h3>Taro</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/taro.jpg" data-name="Taro">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/taro.jpg" alt="" />
+                        <h3>Taro</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Matcha" src="img/matcha.jpg" />
+                        <h3>Matcha</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/matcha.jpg" data-name="matcha">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/matcha.jpg" alt="" />
+                        <h3>Matcha</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Avocado" src="img/avocado.jpg" />
+                        <h3>Avocado</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/avocado.jpg" data-name="Avocado">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/avocado.jpg" alt="" />
+                        <h3>Avocado</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Red Velvet" src="img/red_velvet.jpg" />
+                        <h3>Red Velvet</h3>
+                        <p></p>
+                        <p class="price">Rp15.500</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/red_velvet.jpg" data-name="red_velvet">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/red_velvet.jpg" alt="" />
+                        <h3>Red Velvet</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Premium Choclate" src="img/coklat.jpg" />
+                        <h3>Premium Choclate</h3>
+                        <p></p>
+                        <p class="price">Rp14.800</p>
+                        <button class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/coklatjpg" data-name="Premium Choclate">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/coklat.jpg" alt="" />
+                        <h3>Premium Choclate</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Refresher-->
+            <div class="menu">
+                <h1>Refresher</h1>
+                <div class="product-grid">
+                    <!-- Product Item -->
+                    <div class="product-item">
+                        <img alt="Orange Coffe" src="img/orange_coffe.jpg" />
+                        <h3>Orange Coffe</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/orange_coffe.jpg" data-name="Orange Coffe">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/orange_coffe.jpg" alt="" />
+                        <h3>Orange Coffe</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="V60" src="img/V60.jpg" />
+                        <h3>V60</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/V60.jpg" data-name="V60">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/V60.jpg" alt="" />
+                        <h3>V60</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Strawberry Yakult" src="img/strawberry_yakult.jpg" />
+                        <h3>Strawberry Yakult</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/strawberry_yakult.jpg" data-name="Strawberry Yakult">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/strawberry_yakult.jpg" alt="" />
+                        <h3>Strawberry Yakult</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Premium Tea-->
+            <div class="menu">
+                <h1>Premium Tea</h1>
+                <div class="product-grid">
+                    <!-- Product Item -->
+                    <div class="product-item">
+                        <img alt="Thai Tea" src="img/thai_tea.jpg" />
+                        <h3>Thai Tea</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/thai_tea.jpg" data-name="Thai Tea">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/thai_tea.jpg" alt="" />
+                        <h3>Thai Tea</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Lemon Tea" src="img/lemon_tea.jpg" />
+                        <h3>Lemon Tea</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/lemon_tea.jpg" data-name="lemon_tea">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/lemon_tea.jpg" alt="" />
+                        <h3>Lemon Tea</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+
+                    <div class="product-item">
+                        <img alt="Jasmine Tea" src="img/jasmine_tea.jpg" />
+                        <h3>Jasmine Tea</h3>
+                        <p></p>
+                        <p class="price">Rp15.000</p>
+                        <button id="btnmenu" class="add-to-cart">
+                            Detail
+                        </button>
+                        <div class="jumblah">
+                            <button class="minus">-</button>
+                            <input type="text" value="0" class="quantity">
+                            <button class="plus">+</button>
+                            <button class="cart" data-img="img/jasmine_tea.jpg" data-name="jasmine_tea">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!--box deskripsi menu-->
+                    <div class="description">
+                        <img src="img/jasmine_tea.jpg" alt="" />
+                        <h3>Jasmine Tea</h3>
+                        <p>
+                            (penjelasan product)
+                        </p>
+                        <button class="btndes">O K</button>
+                    </div>
+                    <div id="menuList" class="space-y-4">
+                        <!-- Menu akan ditampilkan di sini -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img id="logofoot" alt="Logo Coffee Shop" src="img/logo.png" />
+                <p>© BimaTech<br />CoffeeShop, 2025</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="#">Kopi Biji</a></li>
+                    <li><a href="#">Pengiriman</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <a href="https://wa.me/6285246196402?text=Halo,%20kak%20saya..." target="_blank">(+62)85246196402</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/share/15qTwkiYfd/" target="_blank"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/bimarizki34?t=DwpYkXzYEU_ZXh37-uwG-w&s=08" target="_blank"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/bimatech_?igsh=anh5N3Zud3R1bTdr" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const addToCartButtons = document.querySelectorAll(".cart");
+            const cartBadge = document.getElementById("cart-badge");
+
+            // Fungsi untuk memperbarui badge keranjang
+            function updateCartBadge() {
+                const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+                cartBadge.textContent = cartItems.length; // Update jumlah item di badge
+
+                // Sembunyikan badge jika jumlah item adalah 0
+                if (cartItems.length === 0) {
+                    cartBadge.style.display = "none";
+                } else {
+                    cartBadge.style.display = "block";
+                }
+            }
+
+            // Update badge saat halaman dimuat
+            updateCartBadge();
+
+            // Add event listener to all "+" buttons
+            addToCartButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const productItem = button.closest(".product-item");
+                    const imgSrc = button.getAttribute("data-img"); // Get the image source
+                    const itemName = button.getAttribute("data-name"); // Get the item name
+                    const quantity = parseInt(productItem.querySelector(".quantity").value); // Get the quantity
+                    const price = parseInt(productItem.querySelector(".price").textContent.replace("Rp", "").replace(".", "")); // Get the price
+
+                    // Validate quantity
+                    if (isNaN(quantity) || quantity <= 0) {
+                        alert("Jumlah barang harus lebih dari 0!");
+                        return;
+                    }
+
+                    // Create a cart item object
+                    const cartItem = {
+                        imgSrc: imgSrc,
+                        itemName: itemName,
+                        quantity: quantity,
+                        price: price, // Add price to the cart item
+                    };
+
+                    // Retrieve existing cart items from localStorage
+                    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+                    // Add the new item to the cart
+                    cartItems.push(cartItem);
+
+                    // Save the updated cart back to localStorage
+                    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+                    // Update the cart badge
+                    updateCartBadge();
+
+                    // Animate the image to the cart
+                    animateImageToCart(imgSrc);
+                });
+            });
+
+            // Function to animate the image to the cart
+            function animateImageToCart(imgSrc) {
+                const img = document.createElement("img");
+                img.src = imgSrc;
+                img.style.position = "fixed";
+                img.style.width = "50px";
+                img.style.height = "50px";
+                img.style.borderRadius = "50%";
+                img.style.transition = "all 1s ease";
+                document.body.appendChild(img);
+
+                const cartIcon = document.querySelector(".fa-shopping-cart");
+                const cartIconRect = cartIcon.getBoundingClientRect();
+
+                const imgRect = img.getBoundingClientRect();
+                const startX = imgRect.left;
+                const startY = imgRect.top;
+                const endX = cartIconRect.left + cartIconRect.width / 2 - imgRect.width / 2;
+                const endY = cartIconRect.top + cartIconRect.height / 2 - imgRect.height / 2;
+
+                img.style.left = `${startX}px`;
+                img.style.top = `${startY}px`;
+
+                setTimeout(() => {
+                    img.style.left = `${endX}px`;
+                    img.style.top = `${endY}px`;
+                    img.style.opacity = "1";
+                }, 10);
+
+                setTimeout(() => {
+                    img.remove();
+                }, 1010);
+            }
+        });
+    </script>
+
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides((slideIndex += n));
+        }
+
+        function currentSlide(n) {
+            showSlides((slideIndex = n));
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length - 1) {
+                slideIndex = 0;
+            }
+            if (n < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            slides[slideIndex].classList.add("active");
+        }
+
+        // Optional: Automatic slideshow
+        let autoSlideInterval;
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                plusSlides(1);
+            }, 3000); // Change image every 3 seconds
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Start auto slide on page load (you can adjust or remove this).
+        startAutoSlide();
+
+        // You can add event listeners to stop/start auto slideshow on hover, etc.
+        const slideshowContainer = document.querySelector(".slideshow-container");
+
+        slideshowContainer.addEventListener("mouseenter", stopAutoSlide); // Stop on mouse enter
+        slideshowContainer.addEventListener("mouseleave", startAutoSlide); // Start on mouse leave
+    </script>
+
+    <script>
+        // Loading spinner
+        window.addEventListener("load", () => {
+            const spinner = document.getElementById("loading-spinner");
+            spinner.style.display = "none";
+        });
+    </script>
+
+    <script>
+        // Menampilkan notif dan backoff saat halaman dimuat
+        window.addEventListener("load", () => {
+            const notif = document.getElementById("notif");
+            const backoff = document.getElementById("backoff");
+
+            notif.style.display = "block";
+            backoff.style.display = "block";
+        });
+
+        // Menutup notif dan backoff saat tombol "OK" diklik
+        document.getElementById("confirm").addEventListener("click", () => {
+            const notif = document.getElementById("notif");
+            const backoff = document.getElementById("backoff");
+
+            notif.style.display = "none";
+            backoff.style.display = "none";
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Mendapatkan semua tombol "Detail"
+            const detailButtons = document.querySelectorAll(".add-to-cart");
+
+            // Mendapatkan semua elemen deskripsi
+            const descriptions = document.querySelectorAll(".description");
+
+            // Menambahkan event listener ke setiap tombol "Detail"
+            detailButtons.forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    // Menampilkan deskripsi yang sesuai
+                    descriptions[index].style.display = "block";
+                });
+            });
+
+            // Menambahkan event listener ke setiap tombol "OK" pada deskripsi
+            const okButtons = document.querySelectorAll(".btndes");
+            okButtons.forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    // Menutup deskripsi yang sesuai
+                    descriptions[index].style.display = "none";
+                });
+            });
+        });
+    </script>
+
+    <!--script diseble masukkan keranjang-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const minusButtons = document.querySelectorAll(".minus");
+            const plusButtons = document.querySelectorAll(".plus");
+            const cartButtons = document.querySelectorAll(".cart");
+
+            // Fungsi untuk memeriksa dan mengatur status tombol keranjang
+            function updateCartButtonState(input, cartButton) {
+                if (parseInt(input.value) === 0) {
+                    cartButton.disabled = true; // Nonaktifkan tombol jika nilai input adalah 0
+                } else {
+                    cartButton.disabled = false; // Aktifkan tombol jika nilai input lebih dari 0
+                }
+            }
+
+            // Fungsi untuk tombol minus
+            minusButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const input = button.nextElementSibling; // Ambil input yang bersebelahan
+                    let value = parseInt(input.value); // Ambil nilai input dan ubah ke integer
+                    if (value > 0) { // Pastikan nilai tidak kurang dari 1
+                        input.value = value - 1; // Kurangi nilai
+                    } else {
+                        input.value = 0; // Set nilai ke 0 jika kurang dari 1
+                    }
+                    // Perbarui status tombol keranjang
+                    const cartButton = button.parentElement.querySelector(".cart");
+                    updateCartButtonState(input, cartButton);
+                });
+            });
+
+            // Fungsi untuk tombol plus
+            plusButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const input = button.previousElementSibling; // Ambil input yang bersebelahan
+                    let value = parseInt(input.value); // Ambil nilai input dan ubah ke integer
+                    input.value = value + 1; // Tambahkan nilai
+                    // Perbarui status tombol keranjang
+                    const cartButton = button.parentElement.querySelector(".cart");
+                    updateCartButtonState(input, cartButton);
+                });
+            });
+
+            // Inisialisasi status tombol keranjang saat halaman dimuat
+            cartButtons.forEach((cartButton) => {
+                const input = cartButton.parentElement.querySelector(".quantity");
+                updateCartButtonState(input, cartButton);
+            });
+        });
+    </script>
+
+    <script>
+        // Ambil data menu dari localStorage
+        const menuItems = JSON.parse(localStorage.getItem('menuItems')) || [];
+
+        // Fungsi untuk menampilkan menu
+        function displayMenu() {
+            const menuList = document.getElementById('menuList');
+            menuList.innerHTML = '';
+
+            menuItems.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'p-4 border border-gray-300 rounded-lg';
+                menuItem.innerHTML = `
+                <h2 class="text-xl font-semibold">ID: ${item.id}</h2>
+                <h2 class="text-xl font-semibold">${item.name}</h2>
+                <p class="text-gray-600">Harga: Rp${item.price}</p>
+                <p class="text-gray-600">Stok: ${item.stock}</p>
+                <img src="${item.image}" alt="${item.name}" class="mt-2 w-32 h-32 object-cover rounded-lg">
+            `;
+                menuList.appendChild(menuItem);
+            });
+        }
+
+        // Panggil fungsi displayMenu saat halaman dimuat
+        displayMenu();
+    </script>
+</body>
+
+</html>
