@@ -1,267 +1,743 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
+</html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>landing page</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>landing page</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bt-brand: #fb8d19;
+            --bt-dark: #222;
+            --bt-body: #6b6b6b;
+            --f-main: "Raleway", Arial, sans-serif;
+            --shadow: 0 10px 20px rgba(0, 0, 0, .08);
+            --bg: #f8f6ee;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--f-main);
+            color: var(--bt-body);
+            background: rgba(232, 230, 224, 1);
+            line-height: 1.6;
+        }
+
+        /* Simple container */
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            background: var(--bg);
+            border-bottom-left-radius: 14px;
+            border-bottom-right-radius: 14px;
+            border-bottom: 1px solid rgba(0, 0, 0, 1);
+            position: fixed;
+            box-shadow: var(--shadow);
+            z-index: 50;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .log {
+            width: 56px;
+            height: 56px;
+            border-radius: 8px;
+        }
+
+        .brand {
+            font-weight: 900;
+            font-size: 1.25rem;
+            color: var(--bt-dark);
+            letter-spacing: .6px;
+            text-shadow: 0 0 12px rgba(255, 153, 0, 0.25);
+        }
+
+        /* Navbar menu */
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid #ddd;
+            padding: 6px 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .nav-item {
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--bt-dark);
+            font-weight: 700;
+            padding: 8px 10px;
+            border-radius: 8px;
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--bt-brand);
+            background: rgba(251, 141, 25, 0.06);
+            transform: translateX(6px);
+        }
+
+        /* HERO / HOME */
+        #home {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 3rem 0;
+            overflow: hidden;
+        }
+
+        /* blurred background image */
+        #home::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('profile.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(2px) brightness(.85);
+            z-index: 0;
+        }
+
+        .home-inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .home-text {
+            flex: 1;
+            color: var(--bt-dark);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            margin-bottom: .5rem;
+            line-height: 1.05;
+        }
+
+        h1 .text-brand {
+            color: var(--bt-brand);
+        }
+
+        h4 {
+            font-weight: 400;
+            color: var(--bt-body);
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--bt-brand);
+            color: #fff;
+            padding: .6rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+        }
+
+        .home-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-img img {
+            width: 60%;
+            max-width: 420px;
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* SECTION TITLES */
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title h1 {
+            color: var(--bt-dark);
+            margin-bottom: .5rem;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--bt-body);
+        }
+
+        .line {
+            width: 95%;
+            height: 3px;
+            background: var(--bt-brand);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* ABOUT GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: #fff;
+            padding: 1.25rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform .25s ease, box-shadow .25s ease;
+            border: 1px solid rgba(0, 0, 0, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .about-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: var(--bt-brand);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .card h5 {
+            margin-top: .75rem;
+            color: var(--bt-dark);
+        }
+
+        .card p {
+            color: var(--bt-body);
+            font-size: .95rem;
+            margin: .5rem 0 1rem;
+        }
+
+        /* PROJECTS */
+        #projects {
+            margin-top: 2rem;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+            padding: 5%;
+        }
+
+        .project {
+            overflow: hidden;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 1);
+        }
+
+        .project img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .project .content {
+            padding: .75rem;
+            text-align: center;
+        }
+
+        /* CONTACT */
+        .contact-wrap {
+            display: grid;
+            justify-content: center;
+            align-items: start;
+            gap: 2rem;
+            text-align: center;
+            color: #000;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .contact-info h3 {
+            color: var(--bt-dark);
+            margin-bottom: .5rem;
+            text-align: start;
+        }
+
+        #contact-form {
+            flex: 1;
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+        }
+
+        #contact-form label {
+            font-weight: 700;
+            color: var(--bt-dark);
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            padding: .6rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            resize: vertical;
+            background: #fff;
+        }
+
+        #contact-form button {
+            background: var(--bt-brand);
+            color: #fff;
+            padding: .6rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        #contact-form button:hover {
+            opacity: .95;
+        }
+
+        /* RESPONSIVE */
+
+        @media (min-width: 901px) {
+            .navbar {
+                padding: .75rem 1.25rem;
+                gap: 1.25rem;
+            }
+
+            /* show full horizontal menu on desktop */
+            .nav-toggle {
+                display: none;
+            }
+
+            .nav-menu {
+                display: flex !important;
+                align-items: center;
+                gap: 1rem;
+                width: auto;
+            }
+
+            .nav-list {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+
+            /* larger hero */
+            #home {
+                min-height: 85vh;
+                padding: 4rem 0;
+            }
+
+            .home-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h4 {
+                font-size: 1.125rem;
+            }
+
+            .home-img img {
+                width: 100%;
+                max-width: 520px;
+            }
+
+            #home::before {
+                background-size: 50% 100%;
+            }
+
+            /* about grid and projects */
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.25rem;
+            }
+
+            .projects {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.25rem;
+                padding: 3%;
+            }
+
+            .project img {
+                height: 220px;
+            }
+
+            /* spacing for sections on desktop */
+            .section {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width:900px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 2%;
+            }
+
+            .home-img img {
+                width: 80%;
+            }
+
+            /* show the toggle on smaller screens */
+            .nav-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* ensure the left area stretches so the toggle can sit on the right */
+            .nav-left {
+                width: 100%;
+                justify-content: space-around;
+            }
+
+            /* hide menu by default, show when .open is present */
+            .nav-menu {
+                display: none;
+                width: 100%;
+            }
+
+            .nav-menu.open {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                margin-top: .5rem;
+            }
+
+            .nav-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+                width: 100%;
+            }
+
+            .nav-item {
+                width: 100%;
+            }
+
+            .nav-link {
+                text-decoration: none;
+                display: block;
+                width: 100%;
+                padding: 8px 12px;
+                border-radius: 8px;
+            }
+        }
+
+        @media (max-width:700px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+                padding: 5%;
+            }
+
+            /* keep menu hidden until toggle is used; adjust navbar layout */
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: .5rem;
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: stretch;
+                padding: .6rem;
+                gap: .5rem;
+            }
+
+            .nav-left {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .nav-toggle {
+                margin-left: 0;
+                /* already right due to justify-content: space-between */
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-      <img class="log" src="logo.jpg" width="10px" height="10px" alt="navbar" />
-      <a class="navbar-brand" href="#">BIMA TECH</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#home"><i class="fa fa-home"></i>Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about"><i class="fa fa-user"></i>about</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#project"><i class="fa fa-pen-to-square"></i>project</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact"><i class="fa fa-phone"></i>contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
+    <header class="container">
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="nav-left">
+                <img class="log" src="logo.jpg" alt="logo">
+                <a class="brand">BIMA TECH</a>
+                <button class="nav-toggle" id="navToggle" aria-expanded="false">☰</button>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="#home">🏠 Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">👤 About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#project">📝 Project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contactSection">📞 Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
+    <main>
+        <!-- HOME -->
+        <section id="home" class="container">
+            <div class="home-inner">
+                <div class="home-img">
+                    <img id="ast" src="astro.png" alt="Astro">
+                </div>
+                <div class="home-text">
+                    <h1>Hai, saya <span class="text-brand">Bima Rizki</span></h1>
+                    <h4>Hello everyone, thanks for visiting me. I am a fullstack web and app Developer</h4>
+                    <a class="btn" href="#about">View More</a>
+                </div>
+            </div>
+        </section>
 
-
-  <section id="home" class="d-flex align-items-center min-vh-100 position-relative">
-    <div class="box"></div>
-    <div class="home-img">
-      <img id="ast" src="astro.png" alt="Astro Image">
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h1 class="display-2 fw-bold">Hai, saya <span class="text-brand">Bima Rizki</span></h1>
-          <h4 class="mb-3 mt-5">Hello everyone, thanks for visiting me. I am a fullstack web and app Developer</h4>
-          <a href="#" class="btn btn-brand">View More</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-title text-center">
+        <!-- ABOUT -->
+        <section id="about" class="section container"></section>
+        <div class="section-title">
             <h1>About Me</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dicta assumenda iste odit saepe dolor
-              ipsa, ipsam facilis ab cum.
-            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dicta assumenda iste odit saepe dolor
+                ipsa.</p>
             <div class="line"></div>
-          </div>
         </div>
-      </div>
-      <section class="abor text-center">
-        <div class="container">
-          <div class="row gy-4">
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="about py-5 px-4 border">
-                <div class="about-icon">
-                  <i class="ri-window-2-fill"></i>
-                </div>
-                <h5 class="mt-4"> Frontend Web Developer</h5>
-                <p>
-                  i am a frontend web developer, i can create a beautiful and responsive website.
-                </p>
-                <a href="#" class="about-link btn btn-sm btn-brand">
-                  <span>Read more</span>
-                </a>
-              </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="about-icon">💻</div>
+                <h5>Frontend Web Developer</h5>
+                <p>I create beautiful and responsive websites.</p>
+                <a class="btn" href="#">Read more</a>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="about py-5 px-4 border">
-                <div class="about-icon">
-                  <i class="ri-android-fill"></i>
-                </div>
-                <h5 class="mt-4">App Developer</h5>
-                <p>
-                  i am a app developer, i can create a mobile apps running in apk OS.
-                </p>
-                <a href="#" class="about-link btn btn-sm btn-brand">
-                  <span>Read more</span>
-                </a>
-              </div>
+            <div class="card">
+                <div class="about-icon">📱</div>
+                <h5>App Developer</h5>
+                <p>I build mobile apps for Android and iOS.</p>
+                <a class="btn" href="#">Read more</a>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="about py-5 px-4 border">
-                <div class="about-icon">
-                  <i class="ri-brush-fill"></i>
-                </div>
-                <h5 class="mt-4">Designer</h5>
-                <p>
-                  i am a designer, i can create a beautiful and atractrive design.
-                </p>
-                <a href="#" class="about-link btn btn-sm btn-brand">
-                  <span>Read more</span>
-                </a>
-              </div>
+            <div class="card">
+                <div class="about-icon">🎨</div>
+                <h5>Designer</h5>
+                <p>I design attractive and usable UI/UX.</p>
+                <a class="btn" href="#">Read more</a>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <div class="about py-5 px-4 border">
-                <div class="about-icon">
-                  <i class="ri-quill-pen-fill"></i>
-                </div>
-                <h5 class="mt-4">Writer</h5>
-                <p>
-                  i am a writer, i can write a article.
-                </p>
-                <a href="#" class="about-link btn btn-sm btn-brand">
-                  <span>Read more</span>
-                </a>
-              </div>
+            <div class="card">
+                <div class="about-icon">✍️</div>
+                <h5>Writer</h5>
+                <p>I write articles and documentation.</p>
+                <a class="btn" href="#">Read more</a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="project" class="section-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="section-title text-center">
-                <h1>My Project</h1>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dicta assumenda iste odit saepe
-                  dolor ipsa, ipsam facilis ab cum.
-                </p>
-                <div class="line"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pro">
-            <div class="col-lg-3 col-sm-6">
-              <div class="project">
-                <img src="img1.jpg" width="300vh" alt="landing page">
-                <div class="content">
-                  <a href="#" class="btn btn-brand">lihat project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pro">
-            <div class="col-lg-3 col-sm-6">
-              <div class="project">
-                <img src="img2.jpg" width="300vh" alt="landing page">
-                <div class="content">
-                  <a href="#" class="btn btn-brand">lihat project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pro">
-            <div class="col-lg-3 col-sm-6">
-              <div class="project">
-                <img src="kopi.jpg" width="300vh" alt="kopi">
-                <div class="content">
-                  <a href="index(1).html" class="btn btn-brand">lihat project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pro">
-            <div class="col-lg-3 col-sm-6">
-              <div class="project">
-                <img src="bidan.jpg" width="300vh" alt="bidan landing page">
-                <div class="content">
-                  <a href="bidan.html" class="btn btn-brand">lihat project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pro">
-            <div class="col-lg-3 col-sm-6">
-              <div class="project">
-                <img src="wedding.jpg" width="300vh" alt="bidan landing page">
-                <div class="content">
-                  <a href="undangan-pernikahan-ica-dan-kodri-main/index.html" class="btn btn-brand">lihat project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pro">
-            <div class="col-lg-3 col-sm-6">
-              <div class="project">
-                <img src="habit.jpg" width="300vh" alt="habits tracker ramadhan">
-                <div class="content">
-                  <a href="habittracker.github.io-main/index.html" class="btn btn-brand">lihat project</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
         </div>
         </section>
 
-    </div>
-  </section>
+        <!-- PROJECT -->
+        <section id="projects" class="section container">
+            <div class="section-title">
+                <h1>My Project</h1>
+                <p>Contoh project yang pernah dibuat.</p>
+                <div class="line"></div>
+            </div>
 
-  <section id="contact" class="wa">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-title text-center">
-            <h1>Contact Me</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dicta assumenda iste odit saepe dolor
-              ipsa, ipsam facilis ab cum.
-            </p>
-            <div class="line"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            <div class="projects">
+                <div class="project">
+                    <img src="poke2.jpg" alt="project 1">
+                    <div class="content"><a class="btn" href="https://bimawest.github.io/Pokemon/">lihat project</a></div>
+                </div>
 
-  <section id="contact">
-    <h2>Kontak Kami</h2>
-    <form id="contact-form" action="proses_kontak.php" method="POST">
-      <label for="name">Nama:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="message">Pesan:</label>
-      <textarea id="message" name="message" required></textarea>
-      <button type="submit">Kirim</button>
-    </form>
-  </section>
+                <div class="project">
+                    <img src="werewolf.jpg" alt="project 2">
+                    <div class="content"><a class="btn" href="https://bimawest.github.io/werewolf/public/index.html">lihat project</a></div>
+                </div>
 
+                <div class="project">
+                    <img src="kopi.jpg" alt="project 3">
+                    <div class="content"><a class="btn" href="https://bimawest.github.io/coffe/">lihat project</a></div>
+                </div>
 
+                <div class="project">
+                    <img src="bidan.jpg" alt="project 4">
+                    <div class="content"><a class="btn" href="https://bimawest.github.io/bidan.github.io/">lihat
+                            project</a>
+                    </div>
+                </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+                <div class="project">
+                    <img src="wedding.jpg" alt="project 5">
+                    <div class="content"><a class="btn"
+                            href="https://bimawest.github.io/undangan-pernikahan-ica-dan-kodri/">lihat
+                            project</a></div>
+                </div>
+
+                <div class="project">
+                    <img src="habit.jpg" alt="project 6">
+                    <div class="content"><a class="btn" href="https://bimawest.github.io/habittracker.github.io/">lihat
+                            project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contactSection" class="section container">
+            <div class="section-title">
+                <h1>Contact Me</h1>
+                <p>Hubungi saya untuk kerjasama atau pertanyaan.</p>
+                <div class="line"></div>
+            </div>
+
+            <div class="contact-wrap">
+                <div class="contact-info"></div>
+                <h3>Kontak</h3>
+                <p>Email: bimatech55.com</p>
+                <p>Telp: +6281234567890</p>
+            </div>
+
+            <form id="contact-form" action="proses_kontak.php" method="POST" novalidate>
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Pesan:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // Simple mobile menu toggle
+        (function () {
+            const toggle = document.getElementById('navToggle');
+            const menu = document.getElementById('navMenu');
+            toggle && toggle.addEventListener('click', function () {
+                const open = menu.classList.toggle('open');
+                this.setAttribute('aria-expanded', String(open));
+            });
+        })();
+    </script>
+
+    <script>
+        // mengirim pesan ke google gmail
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+            })
+                .then(response => response.text())
+                .then(data => {
+                    alert('Pesan berhasil dikirim!');
+                    form.reset();
+                })
+                .catch(error => {
+                    alert('Terjadi kesalahan saat mengirim pesan.');
+                    console.error('Error:', error);
+                });
+        });
+    </script>
 
 </body>
 
