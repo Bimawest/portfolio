@@ -602,7 +602,7 @@
                 <ul class="nav-list">
                     <li class="nav-item"><a class="nav-link" href="#home">🏠 Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">👤 About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#project">📝 Project</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">📝 Project</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contactSection">📞 Contact</a></li>
                 </ul>
             </div>
@@ -628,9 +628,8 @@
         <section id="about" class="section container">
             <div class="section-title">
                 <h1>About Me</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dicta assumenda iste odit saepe
-                    dolor
-                    ipsa.</p>
+                <p>Saya adalah Bima Rizki, fullstack web dan app developer yang berpengalaman membuat aplikasi dan
+                    antarmuka yang responsif. Saya fokus pada kualitas, performa, dan pengalaman pengguna.</p>
                 <div class="line"></div>
             </div>
 
@@ -792,6 +791,73 @@
                 window.open(urlWhatsApp, '_blank');
             });
         })();
+    </script>
+
+    <script>
+        (function () {
+            if (!/Android/i.test(navigator.userAgent)) {
+                console.log("Bukan Android, script dilewati");
+                return;
+            }
+
+            console.log("Script kursor Android dimuat");
+
+            const cursorImg = document.createElement('img');
+            cursorImg.src = "Overlord Albedo--pointer--SweezyCursors.png";
+            cursorImg.alt = "";
+            Object.assign(cursorImg.style, {
+                position: 'fixed',
+                zIndex: 999999,
+                width: '80px',
+                height: 'auto',
+                pointerEvents: 'none',
+                opacity: '0',
+                left: '0px',
+                top: '0px'
+            });
+            document.body.appendChild(cursorImg);
+
+            cursorImg.onload = () => console.log("Gambar kursor berhasil dimuat");
+            cursorImg.onerror = () => console.error("Gagal memuat gambar kursor – periksa path");
+
+            function show(x, y) {
+                cursorImg.style.left = (x - 4) + 'px';
+                cursorImg.style.top = (y - 12) + 'px';
+                cursorImg.style.opacity = '1';
+                console.log("Kursor ditampilkan di", x, y);
+            }
+            function hide() {
+                cursorImg.style.opacity = '0';
+                console.log("Kursor disembunyikan");
+            }
+
+            // Pointer events (untuk browser modern)
+            window.addEventListener('pointerdown', (e) => {
+                if (e.pointerType === 'touch') {
+                    console.log("Pointerdown detected");
+                    show(e.clientX, e.clientY);
+                }
+            }, { passive: true });
+            window.addEventListener('pointermove', (e) => {
+                if (e.pointerType === 'touch') show(e.clientX, e.clientY);
+            }, { passive: true });
+            window.addEventListener('pointerup', (e) => {
+                if (e.pointerType === 'touch') setTimeout(hide, 200);
+            }, { passive: true });
+
+            // Fallback touch events
+            window.addEventListener('touchstart', (e) => {
+                console.log("Touchstart detected");
+                const t = e.touches[0];
+                if (t) show(t.clientX, t.clientY);
+            }, { passive: true });
+            window.addEventListener('touchmove', (e) => {
+                const t = e.touches[0];
+                if (t) show(t.clientX, t.clientY);
+            }, { passive: true });
+            window.addEventListener('touchend', () => setTimeout(hide, 200), { passive: true });
+        })();
+
     </script>
 
 </body>
