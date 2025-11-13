@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
 
-</html>
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -37,11 +35,28 @@
             color: var(--bt-body);
             background: rgba(232, 230, 224, 1);
             line-height: 1.6;
+            /* 🖱️ KURSOR KUSTOM DEFAULT: Overlord Albedo--cursor--SweezyCursors.png */
+            cursor: url("Overlord Albedo--cursor--SweezyCursors.png") 4 12, auto;
         }
 
-        /* Simple container */
+        /* 👆 KURSOR KUSTOM POINTER: Untuk semua elemen interaktif */
+        a,
+        button,
+        [role="button"],
+        .btn,
+        .nav-toggle,
+        #contact-form button,
+        .project .content a,
+        #ig {
+            cursor: url("Overlord Albedo--pointer--SweezyCursors.png") 4 12, pointer;
+        }
 
-        /* NAVBAR */
+        /* ✍️ Kursor teks untuk input/textarea */
+        input,
+        textarea {
+            cursor: text;
+        }
+
         .navbar {
             width: 100%;
             display: flex;
@@ -85,7 +100,6 @@
             border: 1px solid #ddd;
             padding: 6px 8px;
             border-radius: 8px;
-            cursor: pointer;
         }
 
         .nav-menu {
@@ -151,22 +165,39 @@
         .home-text {
             flex: 1;
             color: var(--bt-dark);
+            text-align: right;
+            padding-right: 10%;
         }
 
         h1 {
             font-size: 2.25rem;
             margin-bottom: .5rem;
             line-height: 1.05;
+            text-shadow:
+                1px 1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px -1px 0 #fff;
         }
 
         h1 .text-brand {
             color: var(--bt-brand);
+            text-shadow:
+                1px 1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px -1px 0 #fff;
         }
 
         h4 {
             font-weight: 400;
             color: var(--bt-body);
             margin-bottom: 1rem;
+            text-shadow:
+                1px 1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px -1px 0 #fff;
         }
 
         .btn {
@@ -319,6 +350,12 @@
             gap: 2rem;
             text-align: center;
             color: #000;
+        }
+
+        #ig {
+            text-decoration: none;
+            color: var(--bt-dark);
+            cursor: pointer;
         }
 
         .contact-info {
@@ -588,43 +625,44 @@
         </section>
 
         <!-- ABOUT -->
-        <section id="about" class="section container"></section>
-        <div class="section-title">
-            <h1>About Me</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dicta assumenda iste odit saepe dolor
-                ipsa.</p>
-            <div class="line"></div>
-        </div>
-
-        <div class="grid">
-            <div class="card">
-                <div class="about-icon">💻</div>
-                <h5>Frontend Web Developer</h5>
-                <p>I create beautiful and responsive websites.</p>
-                <a class="btn" href="#">Read more</a>
+        <section id="about" class="section container">
+            <div class="section-title">
+                <h1>About Me</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dicta assumenda iste odit saepe
+                    dolor
+                    ipsa.</p>
+                <div class="line"></div>
             </div>
 
-            <div class="card">
-                <div class="about-icon">📱</div>
-                <h5>App Developer</h5>
-                <p>I build mobile apps for Android and iOS.</p>
-                <a class="btn" href="#">Read more</a>
-            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="about-icon">💻</div>
+                    <h5>Frontend Web Developer</h5>
+                    <p>I create beautiful and responsive websites.</p>
+                    <a class="btn" href="#">Read more</a>
+                </div>
 
-            <div class="card">
-                <div class="about-icon">🎨</div>
-                <h5>Designer</h5>
-                <p>I design attractive and usable UI/UX.</p>
-                <a class="btn" href="#">Read more</a>
-            </div>
+                <div class="card">
+                    <div class="about-icon">📱</div>
+                    <h5>App Developer</h5>
+                    <p>I build mobile apps for Android and iOS.</p>
+                    <a class="btn" href="#">Read more</a>
+                </div>
 
-            <div class="card">
-                <div class="about-icon">✍️</div>
-                <h5>Writer</h5>
-                <p>I write articles and documentation.</p>
-                <a class="btn" href="#">Read more</a>
+                <div class="card">
+                    <div class="about-icon">🎨</div>
+                    <h5>Designer</h5>
+                    <p>I design attractive and usable UI/UX.</p>
+                    <a class="btn" href="#">Read more</a>
+                </div>
+
+                <div class="card">
+                    <div class="about-icon">✍️</div>
+                    <h5>Writer</h5>
+                    <p>I write articles and documentation.</p>
+                    <a class="btn" href="#">Read more</a>
+                </div>
             </div>
-        </div>
         </section>
 
         <!-- PROJECT -->
@@ -638,12 +676,14 @@
             <div class="projects">
                 <div class="project">
                     <img src="poke2.jpg" alt="project 1">
-                    <div class="content"><a class="btn" href="https://bimawest.github.io/Pokemon/">lihat project</a></div>
+                    <div class="content"><a class="btn" href="https://bimawest.github.io/Pokemon/">lihat project</a>
+                    </div>
                 </div>
 
                 <div class="project">
                     <img src="werewolf.jpg" alt="project 2">
-                    <div class="content"><a class="btn" href="https://bimawest.github.io/werewolf/public/index.html">lihat project</a></div>
+                    <div class="content"><a class="btn"
+                            href="https://bimawest.github.io/werewolf/public/index.html">lihat project</a></div>
                 </div>
 
                 <div class="project">
@@ -683,24 +723,27 @@
             </div>
 
             <div class="contact-wrap">
-                <div class="contact-info"></div>
-                <h3>Kontak</h3>
-                <p>Email: bimatech55.com</p>
-                <p>Telp: +6281234567890</p>
+                <div class="contact-info">
+                    <h3>Kontak</h3>
+                    <p>Email: bimatech55@gmail.com</p>
+                    <a href="https://www.instagram.com/bimatech_/" id="ig">ig: @bimatech_</a>
+                    <p>Telp: +6282393349452</p>
+                </div>
+
+                <form id="contact-form" action="proses_kontak.php" method="POST" novalidate>
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" name="message" rows="5" required
+                        placeholder="anda bisa memesan atau feedback di sini"></textarea>
+
+                    <button type="submit">Kirim</button>
+                </form>
             </div>
-
-            <form id="contact-form" action="proses_kontak.php" method="POST" novalidate>
-                <label for="name">Nama:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Pesan:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Kirim</button>
-            </form>
         </section>
     </main>
 
@@ -717,26 +760,38 @@
     </script>
 
     <script>
-        // mengirim pesan ke google gmail
-        const form = document.getElementById('contact-form');
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
+        // script kirim form ke wa
+        (function () {
+            const form = document.getElementById('contact-form');
+            if (!form) return;
 
-            const formData = new FormData(form);
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-            })
-                .then(response => response.text())
-                .then(data => {
-                    alert('Pesan berhasil dikirim!');
-                    form.reset();
-                })
-                .catch(error => {
-                    alert('Terjadi kesalahan saat mengirim pesan.');
-                    console.error('Error:', error);
-                });
-        });
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Ambil data dari form (sesuai id di form: name, email, message)
+                const nama = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const pesan = document.getElementById('message').value.trim();
+
+                // Validasi
+                if (!nama || !email || !pesan) {
+                    alert('Harap isi semua field!');
+                    return;
+                }
+
+                // Format pesan WhatsApp
+                // nomor tanpa tanda '+' untuk wa.me
+                const nomorWhatsApp = '6282393349452'; // Ganti dengan nomor WhatsApp tujuan
+                const pesanWhatsApp = "Halo, saya mengirim pesan dari form:\n\n" +
+                    "Nama: " + nama + "\n" +
+                    "Email: " + email + "\n" +
+                    "Pesan: " + pesan;
+
+                // Buat URL WhatsApp dan buka di tab baru
+                const urlWhatsApp = "https://wa.me/" + nomorWhatsApp + "?text=" + encodeURIComponent(pesanWhatsApp);
+                window.open(urlWhatsApp, '_blank');
+            });
+        })();
     </script>
 
 </body>
